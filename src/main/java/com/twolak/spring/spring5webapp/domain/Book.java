@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Book {
@@ -24,6 +25,9 @@ public class Book {
 		joinColumns = @JoinColumn(name = "book_id"),
 		inverseJoinColumns = @JoinColumn(name = "author_id"))
 	private Set<Author> authors = new HashSet<>();
+	
+	@ManyToOne
+	private Publisher publisher;
 	
 	public Book() {
 	}
@@ -88,5 +92,13 @@ public class Book {
 			return false;
 		Book other = (Book) obj;
 		return id != null ? id.equals(other.id) : other.id == null;
+	}
+
+	public Publisher getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(Publisher publisher) {
+		this.publisher = publisher;
 	}
 }
