@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.twolak.spring</groupId>
 	<artifactId>spring5webapp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>spring5webapp</name>
 	<description>SImple web app</description>
 
